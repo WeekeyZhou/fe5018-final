@@ -43,7 +43,8 @@ Final Project/
 │       └── class project data (part 3 - pf construction).xlsx
 │
 ├── src/
-│   └── utils.py               Shared helpers (annualization, Sharpe ratio)
+│   ├── config.py              Paths, file names, analysis periods, chart style
+│   └── utils.py               Shared helpers: units, dates, annualization, charts
 │
 ├── part1/ … part5/            One folder per member: notebooks / scripts
 │
@@ -83,10 +84,30 @@ Members 1 and 2 should also align the wording on how HML is constructed (1A vs. 
 
 ## Team conventions
 
+All conventions are implemented in `src/config.py` and `src/utils.py` — use them instead of writing your own.
+
+```python
+# at the top of every notebook in partN/
+import sys; sys.path.append("..")
+from src import config, utils
+config.apply_style()
+```
+
 - **Units:** all returns in **decimals** (0.01 = 1%) inside code; convert to % only when displaying.
-- **Dates:** month-end index (`to_period('M')` in pandas); each row = the return earned *in* that month.
-- **Annualization:** agree on one method (return, volatility, Sharpe), implement it once in `src/utils.py`, and state it once in the report.
-- **Exhibits:** every chart/table states what is shown, data source, time period and investable universe; all axes labelled; consistent fonts, colours and sizes.
+  FF percent data → `utils.pct_to_decimal()`; MSCI index levels → `utils.levels_to_returns()`.
+- **Dates:** monthly `Period` index; each row = the return earned *in* that month → `utils.to_monthly_index()`.
+  Analysis periods from the assignment are in `config.PERIODS` → `utils.select_period(df, "1C")`.
+- **Annualization:**
+  - Volatility is always `std(monthly) × √12` → `utils.annualized_volatility()`.
+  - Annualized return must state its method: `utils.annualized_return(r, method="arithmetic")` (mean × 12) or `method="geometric"` (compound growth). The assignment asks us to think about which mean is appropriate (1A, 2C), so choose per question and say so in the report.
+  - Sharpe ratio follows footnote 2 of the assignment → `utils.sharpe_ratio(r, rf, method=...)`.
+  - Also available: `tracking_error()`, `t_stat_mean()`, `cumulative_value()`.
+- **Exhibits:**
+  - Create figures at their **printed size** with `utils.new_fig("full")` (6.0 × 2.8 in) or `utils.new_fig("half")` (3.0 × 2.3 in, two side by side). Don't resize them in Word, so fonts stay readable and don't overlap.
+  - Small fonts: 8 pt labels, 7 pt ticks/legend, 9 pt title, 6.5 pt source note.
+  - Colour-blind-safe palette; market/benchmark is always grey (`config.COLOR_MARKET`).
+  - Every chart states what is shown, data source, period and universe; all axes labelled.
+  - Save with `utils.save_fig(fig, "fig_1C_sharpe", source="Source: ... Jan 1995 - Jul 2023. ...")` and `utils.save_table(df, "tab_3A_weights")`.
 - **File names:** include the question number, e.g. `fig_1C_sharpe.png`, `tab_3A_weights.csv`.
 
 ---
