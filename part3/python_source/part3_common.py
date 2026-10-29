@@ -100,3 +100,26 @@ def portfolio_returns(rets: pd.DataFrame, W: pd.DataFrame) -> pd.DataFrame:
     """Constant-weight portfolio returns r_p,t = w' r_t (i.e. rebalanced monthly
     back to the fixed target weights, no re-estimation)."""
     return rets[W.index] @ W
+
+
+def min_var_long_only(df: pd.DataFrame, tol: float = 1e-6) -> pd.Series:
+    """Long-only, fully invested minimum-variance weights from the sample covariance of `df`.
+
+    Same method as question_3A.ipynb (cvxpy / CLARABEL); weights below `tol` are set to 0
+    and the rest re-normalized. Also checks the KKT optimality conditions.
+    """
+    import cvxpy as cp
+
+    S = df.cov().to_numpy()
+    n = S.shape[0]
+    w = cp.Variable(n)
+    prob = cp.Problem(cp.Minimize(cp.quad_form(w, cp.psd_wrap(S))), [cp.sum(w) == 1, w >= 0])
+    prob.solve(solver=cp.CLARABEL)
+    if prob.status != "optimal":
+        raise RuntimeError(f"optimizer status: {prob.status}")
+    x = np.where(w.value < tol, 0.0, w.value)
+    x = x / x.sum()
+    # KKT: held assets have equal marginal variance contribution; excluded assets a higher one
+    mrc = S @ x / (x @ S @ x)
+    assert np.allclose(mrc[x > 0], 1, atol=1e-3) and (mrc[x == 0] >= 1 - 1e-3).all(), "KKT check failed"
+    return pd.Series(x, index=df.columns, name="mv_long_only")

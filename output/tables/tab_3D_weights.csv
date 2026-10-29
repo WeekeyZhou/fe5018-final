@@ -1,0 +1,15 @@
+Code,Industry,Old weights (as of Dec 2004),New weights (as of Dec 2015),Change
+Food,Food products,0.090535,0.373503,0.282969
+Util,Utilities,0.167346,0.233025,0.065679
+Beer,Beer & liquor,0.000000,0.211694,0.211694
+Rtail,Retail,0.000000,0.134165,0.134165
+Gold,Precious metals,0.007311,0.047613,0.040301
+RlEst,Real estate,0.136687,0.000000,-0.136687
+Hshld,Consumer goods,0.122813,0.000000,-0.122813
+Agric,Agriculture,0.106762,0.000000,-0.106762
+Drugs,Pharmaceuticals,0.094793,0.000000,-0.094793
+Guns,Defense,0.093012,0.000000,-0.093012
+Books,Printing & publishing,0.077244,0.000000,-0.077244
+MedEq,Medical equipment,0.058608,0.000000,-0.058608
+Telcm,Communication,0.028876,0.000000,-0.028876
+Oil,Petroleum & natural gas,0.016013,0.000000,-0.016013
