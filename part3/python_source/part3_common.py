@@ -123,3 +123,30 @@ def min_var_long_only(df: pd.DataFrame, tol: float = 1e-6) -> pd.Series:
     mrc = S @ x / (x @ S @ x)
     assert np.allclose(mrc[x > 0], 1, atol=1e-3) and (mrc[x == 0] >= 1 - 1e-3).all(), "KKT check failed"
     return pd.Series(x, index=df.columns, name="mv_long_only")
+
+
+MSCI_USA = "USA Standard (Large+Mid Cap)"
+
+
+def load_msci_usa() -> pd.Series:
+    """MSCI USA Standard (large+mid cap), gross total return, USD -> monthly decimal returns.
+
+    Same logic as Part 2's loader: locate the 'Date' header row, read the contiguous
+    monthly block (copyright text follows below), strip thousands separators, and
+    convert month-end levels to month-end to month-end returns. First return = Jan 1995.
+    """
+    sheet = pd.read_excel(config.FILE_FF_MSCI, sheet_name=config.SHEET_MSCI, header=None)
+    meta = {str(a).strip(): str(b).strip() for a, b in sheet.iloc[:6, :2].itertuples(index=False, name=None)}
+    assert meta.get("Index Level :") == "Gross" and meta.get("Currency :") == "USD"
+    h = int(np.flatnonzero(sheet.iloc[:, 0].astype(str).str.strip().eq("Date"))[0])
+    j = int(np.flatnonzero(sheet.iloc[h].astype(str).str.strip().eq(MSCI_USA))[0])
+    end = h + 1
+    while end < len(sheet) and pd.notna(sheet.iat[end, 0]):
+        end += 1
+    block = sheet.iloc[h + 1:end, [0, j]]
+    levels = pd.Series(
+        pd.to_numeric(block.iloc[:, 1].astype(str).str.replace(",", "", regex=False)).to_numpy(),
+        index=pd.to_datetime(block.iloc[:, 0].astype(str).str.strip(), format="%b %d, %Y"))
+    levels = utils.to_monthly_index(levels)
+    assert levels.index.is_unique and (levels > 0).all()
+    return utils.levels_to_returns(levels).rename("MSCI USA")

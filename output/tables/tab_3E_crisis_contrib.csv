@@ -1,0 +1,25 @@
+Crisis,Code,Industry,Weight,Industry crisis return,Rank of 49 (1 = best),Contribution (≈ weight × return)
+GFC,RlEst,Real estate,0.136687,-0.671773,45,-0.091823
+GFC,Util,Utilities,0.167346,-0.325771,10,-0.054516
+GFC,Books,Printing & publishing,0.077244,-0.563840,38,-0.043553
+GFC,Hshld,Consumer goods,0.122813,-0.346704,12,-0.042580
+GFC,Guns,Defense,0.093012,-0.435858,21,-0.040540
+GFC,Agric,Agriculture,0.106762,-0.333949,11,-0.035653
+GFC,MedEq,Medical equipment,0.058608,-0.419594,20,-0.024592
+GFC,Drugs,Pharmaceuticals,0.094793,-0.241406,4,-0.022884
+GFC,Food,Food products,0.090535,-0.243185,5,-0.022017
+GFC,Telcm,Communication,0.028876,-0.372702,14,-0.010762
+GFC,Oil,Petroleum & natural gas,0.016013,-0.382461,15,-0.006125
+GFC,Gold,Precious metals,0.007311,-0.116387,1,-0.000851
+COVID,RlEst,Real estate,0.136687,-0.424197,46,-0.057982
+COVID,Util,Utilities,0.167346,-0.216494,21,-0.036229
+COVID,Books,Printing & publishing,0.077244,-0.278559,33,-0.021517
+COVID,Guns,Defense,0.093012,-0.195100,19,-0.018147
+COVID,Hshld,Consumer goods,0.122813,-0.146390,7,-0.017978
+COVID,Agric,Agriculture,0.106762,-0.166163,11,-0.017740
+COVID,Food,Food products,0.090535,-0.131371,5,-0.011894
+COVID,MedEq,Medical equipment,0.058608,-0.182148,15,-0.010675
+COVID,Oil,Petroleum & natural gas,0.016013,-0.447989,48,-0.007174
+COVID,Drugs,Pharmaceuticals,0.094793,-0.070655,2,-0.006698
+COVID,Telcm,Communication,0.028876,-0.186177,16,-0.005376
+COVID,Gold,Precious metals,0.007311,-0.032095,1,-0.000235
