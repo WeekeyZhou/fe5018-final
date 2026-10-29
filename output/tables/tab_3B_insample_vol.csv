@@ -1,0 +1,6 @@
+Portfolio,In-sample annualized volatility (Jan 1995 - Dec 2004),Type
+Min-var (shorts allowed),0.075861,3A portfolio
+Min-var (long-only),0.103156,3A portfolio
+Inverse volatility,0.139889,3A portfolio
+Equal weight (49 industries),0.146300,Reference
+Lowest-vol single industry (Food products),0.151823,Reference

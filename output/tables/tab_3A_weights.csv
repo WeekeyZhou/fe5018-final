@@ -1,0 +1,51 @@
+Code,Industry,Min-var (shorts allowed),Min-var (long-only),Inverse volatility
+Agric,Agriculture,0.063818,0.106762,0.022289
+Food,Food products,0.194759,0.090535,0.029122
+Soda,Candy & soda,-0.051427,0.000000,0.014649
+Beer,Beer & liquor,-0.018069,0.000000,0.021080
+Smoke,Tobacco,0.000671,0.000000,0.014497
+Toys,Recreation,-0.005151,0.000000,0.020451
+Fun,Entertainment,0.013200,0.000000,0.017747
+Books,Printing & publishing,0.412753,0.077244,0.026855
+Hshld,Consumer goods,0.211542,0.122813,0.027459
+Clths,Apparel,0.022579,0.000000,0.020017
+Hlth,Healthcare services,-0.049215,0.000000,0.017522
+MedEq,Medical equipment,0.251986,0.058608,0.028596
+Drugs,Pharmaceuticals,-0.011792,0.094793,0.025222
+Chems,Chemicals,-0.284126,0.000000,0.024102
+Rubbr,Rubber & plastics,0.094353,0.000000,0.022222
+Txtls,Textiles,0.000769,0.000000,0.020852
+BldMt,Construction materials,-0.037592,0.000000,0.024216
+Cnstr,Construction,-0.178039,0.000000,0.018701
+Steel,Steel works,0.068486,0.000000,0.014539
+FabPr,Fabricated products,-0.024044,0.000000,0.016741
+Mach,Machinery,-0.023342,0.000000,0.018190
+ElcEq,Electrical equipment,-0.081374,0.000000,0.019781
+Autos,Autos & trucks,0.063300,0.000000,0.018146
+Aero,Aircraft,-0.206243,0.000000,0.018151
+Ships,Ships & rail equipment,-0.006798,0.000000,0.019389
+Guns,Defense,0.136554,0.093012,0.017084
+Gold,Precious metals,-0.011169,0.007311,0.010408
+Mines,Non-precious mining,0.052160,0.000000,0.020038
+Coal,Coal,-0.017260,0.000000,0.010012
+Oil,Petroleum & natural gas,0.192687,0.016013,0.025152
+Util,Utilities,0.215113,0.167346,0.028110
+Telcm,Communication,0.001511,0.028876,0.020169
+PerSv,Personal services,-0.134679,0.000000,0.021513
+BusSv,Business services,-0.323327,0.000000,0.024033
+Hardw,Computer hardware,0.019731,0.000000,0.011951
+Softw,Computer software,0.102906,0.000000,0.013311
+Chips,Electronic equipment,0.013301,0.000000,0.011680
+LabEq,Measuring & control equip.,-0.041605,0.000000,0.015789
+Paper,Business supplies,0.259854,0.000000,0.024700
+Boxes,Shipping containers,-0.032978,0.000000,0.018603
+Trans,Transportation,0.077706,0.000000,0.024377
+Whlsl,Wholesale,-0.052822,0.000000,0.026042
+Rtail,Retail,0.005971,0.000000,0.022765
+Meals,Restaurants & hotels,0.138555,0.000000,0.024652
+Banks,Banking,-0.165519,0.000000,0.022592
+Insur,Insurance,-0.039892,0.000000,0.024522
+RlEst,Real estate,0.230000,0.136687,0.027860
+Fin,Trading,-0.044682,0.000000,0.016083
+Other,Other,-0.003120,0.000000,0.018017
+Sum,Sum of weights,1.000000,1.000000,1.000000
