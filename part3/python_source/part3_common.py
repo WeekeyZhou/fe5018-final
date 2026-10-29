@@ -150,3 +150,10 @@ def load_msci_usa() -> pd.Series:
     levels = utils.to_monthly_index(levels)
     assert levels.index.is_unique and (levels > 0).all()
     return utils.levels_to_returns(levels).rename("MSCI USA")
+
+
+def light_hex(color: str, strength: float = 0.30) -> str:
+    """Light tint of a colour as 'RRGGBB' (same tint as the 3A table: 30% colour, 70% white)."""
+    import matplotlib.colors as mcolors
+    rgb = strength * np.array(mcolors.to_rgb(color)) + (1 - strength)
+    return mcolors.to_hex(rgb).lstrip("#").upper()

@@ -6,3 +6,4 @@ statsmodels
 openpyxl
 cvxpy
 jupyter
+python-docx
