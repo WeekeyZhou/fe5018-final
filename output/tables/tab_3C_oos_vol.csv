@@ -1,0 +1,6 @@
+Portfolio,In-sample vol (Jan 1995 - Dec 2004),Out-of-sample vol (Jan 2005 - Jul 2023),Ratio OOS / IS,Type
+Min-var (shorts allowed),0.075861,0.167483,2.207760,3A portfolio
+Min-var (long-only),0.103156,0.142873,1.385024,3A portfolio
+Inverse volatility,0.139889,0.172306,1.231738,3A portfolio
+Equal weight (49 industries),0.146300,0.174541,1.193032,Reference
+Lowest-vol industry in 1995–2004 (Food products),0.151823,0.126760,0.834920,Reference

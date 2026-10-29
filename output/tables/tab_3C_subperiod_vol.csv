@@ -1,0 +1,5 @@
+Sub-period,Min-var (shorts allowed),Min-var (long-only),Inverse volatility,Equal weight (49 industries),Lowest-vol portfolio
+2005–2014,0.168591,0.144044,0.172885,0.175794,Min-var (long-only)
+2015–2023/07,0.166921,0.142183,0.172467,0.173909,Min-var (long-only)
+2005–2007 (pre-GFC),0.100039,0.075453,0.089010,0.092796,Min-var (long-only)
+2008–2009 (GFC),0.315787,0.242557,0.286504,0.290479,Min-var (long-only)
