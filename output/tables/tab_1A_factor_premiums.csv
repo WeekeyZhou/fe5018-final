@@ -1,0 +1,7 @@
+Period,Factor,N,Mean Monthly Return (%),t-stat,Significant at 5%
+1A_pre,Mkt-RF,792,0.6552,3.2185,True
+1A_pre,SMB,792,0.2399,2.1258,True
+1A_pre,HML,792,0.4353,3.3331,True
+1A_post,Mkt-RF,367,0.7185,3.0914,True
+1A_post,SMB,367,0.0995,0.5994,False
+1A_post,HML,367,0.1457,0.8304,False
